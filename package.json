@@ -1,0 +1,23 @@
+{
+  "name": "kotor-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fictitious-studios/kotorAPI.git"
+  },
+  "author": "fictitious-studios",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fictitious-studios/kotorAPI/issues"
+  },
+  "homepage": "https://github.com/fictitious-studios/kotorAPI#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "mongodb": "^2.2.29"
+  }
+}
