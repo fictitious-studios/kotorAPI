@@ -3,6 +3,7 @@ var app = express();
 
 require("./_routes/ArmorsRoutes.js")(app);
 require("./_routes/FeatsRoutes.js")(app);
+require("./_routes/BeltsRoutes.js")(app);
 
 // =======================================
 //          START KOTOR SERVER
