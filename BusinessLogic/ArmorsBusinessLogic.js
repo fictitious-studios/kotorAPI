@@ -3,17 +3,20 @@ var comparators = require("../BusinessLogic/Utilities/Comparators.js")
 
 exports.GetAllArmors = function() {
     return dataAccess.GetAllArmors()
-    .then((armors) => {
+    .then(armors => {
         return armors.sort(comparators.NameAscendingComparator);
     })
-    .catch((error) => {
-        return error;
+    .catch(error => {
+        throw error;
     });
 }
 
 exports.GetArmorById = function(id) {
     return dataAccess.GetArmorById(id)
-    .catch((error) => {
-        return error;
+    .then(armor => {
+        return armor;
+    })
+    .catch(error => {
+        throw error;
     });
 }
