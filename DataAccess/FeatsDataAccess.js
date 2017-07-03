@@ -8,7 +8,7 @@ exports.GetAllFeats = function() {
         db.close();
         return feats;
     })
-    .catch((error) => {
+    .catch(error => {
         throw error;
     });
 };

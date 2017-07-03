@@ -6,7 +6,7 @@ module.exports = function(app) {
         .then(armors => {
             res.json(armors);
         })
-        .catch((error) => {
+        .catch(error => {
             res.json(error.message);
         });
     });
