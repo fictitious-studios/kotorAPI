@@ -40,6 +40,16 @@ module.exports = function(app, admin) {
         });
     });
     
+    admin.get("/armors/:id", function(req, res) {
+        businessLogic.GetArmorById(req.params.id)
+        .then(armor => {
+            res.json(armor);
+        })
+        .catch(error => {
+            res.json(error.message);
+        });
+    });
+    
     admin.post("/armors", urlencodedParser, assertArmor, function(req, res) {
                 
         var immunity = [];
