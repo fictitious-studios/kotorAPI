@@ -4,9 +4,9 @@ var admin = express();
 
 app.use("/admin", admin);
 
-require("./_routes/ArmorsRoutes.js")(app, admin);
-require("./_routes/FeatsRoutes.js")(app);
-require("./_routes/BeltsRoutes.js")(app);
+require("./Routes/ArmorsRoutes.js")(app, admin);
+require("./Routes/FeatsRoutes.js")(app);
+require("./Routes/BeltsRoutes.js")(app);
 
 // =======================================
 //          START KOTOR SERVER

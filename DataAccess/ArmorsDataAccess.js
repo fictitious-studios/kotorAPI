@@ -30,16 +30,16 @@ exports.InsertArmor = function(armor) {
     return dbFactory.GetAdminConnection(mongo)
     .then(db => {
         return new Promise((resolve, reject) => {
-            db.collection("armors").findOneAndUpdate({ "name": armor.name }, armor, { "upsert" : true }, function(error, result) {
+            db.collection("armors").findOneAndUpdate({ "name": armor.name }, armor, { "returnOriginal": false, "upsert" : true }, function(error, result) {
                 if(!error) {
                     resolve(result.value);
                 }
                 else {
                     reject(error);
                 }
+                
+                db.close();
             });
-            
-            db.close();
         });
     })
     .catch(error => {
