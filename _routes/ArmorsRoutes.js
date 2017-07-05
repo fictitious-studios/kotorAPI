@@ -1,4 +1,7 @@
 var businessLogic = require("../BusinessLogic/ArmorsBusinessLogic.js");
+var bodyParser = require('body-parser');
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
+var assertArmor = require("../BaseClasses/Assert.js").armor;
 
 module.exports = function(app, admin) {
     // =====================================
@@ -37,9 +40,10 @@ module.exports = function(app, admin) {
         });
     });
     
-    admin.post("/armors", function(req, res) {
+    admin.post("/armors", urlencodedParser, assertArmor, function(req, res) {
+                
         var immunity = [];
-        
+
         if (req.body.immunity1) immunity.push(req.body.immunity1);
         if (req.body.immunity2) immunity.push(req.body.immunity2);
         if (req.body.immunity3) immunity.push(req.body.immunity3);
@@ -70,6 +74,12 @@ module.exports = function(app, admin) {
             "immunity": immunity
         };
         
-        res.json(armor);
+        businessLogic.InsertArmor(armor)
+        .then(function() {
+            res.send(armor);
+        })
+        .catch(error => {
+            res.send(error.message);
+        });
     });
 }
