@@ -1,6 +1,25 @@
 
-exports.armor = function(req, res, next) {
+exports.Armor = function(req, res, next) {
     try {
+        
+        NotNull(req.body.name);
+        NotNull(req.body.defBonus);
+        NotNull(req.body.maxDexBonus);
+        NotNull(req.body.reqFeat);
+        NotNull(req.body.imageURL);
+        NotNull(req.body.description);
+        NotNull(req.body.cold);
+        NotNull(req.body.fire);
+        NotNull(req.body.sonic);
+        NotNull(req.body.electrical);
+        NotNull(req.body.bludgeoning);
+        NotNull(req.body.slashing);
+        NotNull(req.body.strength);
+        NotNull(req.body.dexterity);
+        NotNull(req.body.constitution);
+        NotNull(req.body.intelligence);
+        NotNull(req.body.wisdom);
+        NotNull(req.body.charisma);
         
         NotWhiteSpace(req.body.name);
         NotWhiteSpace(req.body.defBonus);

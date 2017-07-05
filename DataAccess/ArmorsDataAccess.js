@@ -29,15 +29,18 @@ exports.GetArmorById = function(id) {
 exports.InsertArmor = function(armor) {
     return dbFactory.GetAdminConnection(mongo)
     .then(db => {
-        db.collection("armors").updateOne({ "name": armor.name }, armor, { "upsert" : true }, function(error, result) {
-            if(!error) {
-                return result;
-            }
-            else {
-                throw error;
-            }
+        return new Promise((resolve, reject) => {
+            db.collection("armors").findOneAndUpdate({ "name": armor.name }, armor, { "upsert" : true }, function(error, result) {
+                if(!error) {
+                    resolve(result.value);
+                }
+                else {
+                    reject(error);
+                }
+            });
+            
+            db.close();
         });
-        db.close();
     })
     .catch(error => {
        throw error; 

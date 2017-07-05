@@ -1,7 +1,7 @@
 var businessLogic = require("../BusinessLogic/ArmorsBusinessLogic.js");
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
-var assertArmor = require("../BaseClasses/Assert.js").armor;
+var assertArmor = require("../BaseClasses/KotorAssert.js").Armor;
 
 module.exports = function(app, admin) {
     // =====================================
@@ -75,11 +75,11 @@ module.exports = function(app, admin) {
         };
         
         businessLogic.InsertArmor(armor)
-        .then(function() {
-            res.send(armor);
+        .then(result => {
+            res.json(result);
         })
         .catch(error => {
-            res.send(error.message);
+            res.json(error.message);
         });
     });
 }
