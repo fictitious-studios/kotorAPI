@@ -1,7 +1,10 @@
 var express = require("express");
 var app = express();
+var admin = express();
 
-require("./_routes/ArmorsRoutes.js")(app);
+app.use("/admin", admin);
+
+require("./_routes/ArmorsRoutes.js")(app, admin);
 require("./_routes/FeatsRoutes.js")(app);
 require("./_routes/BeltsRoutes.js")(app);
 
