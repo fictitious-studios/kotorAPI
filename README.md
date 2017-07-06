@@ -1,5 +1,5 @@
 # kotorAPI
-A RESTful API for retrieving *"Star Wars: Knights of the Old Republic"* item and equipment data.
+A REST API for retrieving *"Star Wars: Knights of the Old Republic"* item and equipment data.
 
 ### Endpoints
 | **Url** | **Description** | **Method** | **Response Format** | **Error Response** |
