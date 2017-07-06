@@ -1,18 +1,18 @@
 var dataAccess = require("../DataAccess/ArmorsDataAccess.js");
 var comparators = require("../BusinessLogic/Utilities/Comparators.js");
 
-exports.GetAllArmors = function() {
-    return dataAccess.GetAllArmors()
+exports.getAllArmors = function() {
+    return dataAccess.getAllArmors()
     .then(armors => {
-        return armors.sort(comparators.NameAscendingComparator);
+        return armors.sort(comparators.nameAscendingComparator);
     })
     .catch(error => {
         throw error;
     });
 }
 
-exports.GetArmorById = function(id) {
-    return dataAccess.GetArmorById(id)
+exports.getArmorById = function(id) {
+    return dataAccess.getArmorById(id)
     .then(armor => {
         return armor;
     })
@@ -21,8 +21,8 @@ exports.GetArmorById = function(id) {
     });
 }
 
-exports.InsertArmor = function(armor) {
-    return dataAccess.InsertArmor(armor)
+exports.insertArmor = function(armor) {
+    return dataAccess.insertArmor(armor)
     .then(result => {
         return result;
     })

@@ -2,7 +2,7 @@ var businessLogic = require("../BusinessLogic/FeatsBusinessLogic.js");
 
 module.exports = function(app) {
     app.get("/feats", function(req, res) {
-        businessLogic.GetAllFeats()
+        businessLogic.getAllFeats()
         .then(feats => {
             res.json(feats);
         })

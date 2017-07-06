@@ -1,10 +1,10 @@
 var dataAccess = require("../DataAccess/BeltsDataAccess.js");
 var comparators = require("../BusinessLogic/Utilities/Comparators.js")
 
-exports.GetAllBelts = function() {
-    return dataAccess.GetAllBelts()
+exports.getAllBelts = function() {
+    return dataAccess.getAllBelts()
     .then(belts => {
-        return belts.sort(comparators.NameAscendingComparator);
+        return belts.sort(comparators.nameAscendingComparator);
     })
     .catch(error => {
         throw error;

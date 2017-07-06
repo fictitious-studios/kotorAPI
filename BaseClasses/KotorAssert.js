@@ -1,59 +1,59 @@
 
-exports.Armor = function(req, res, next) {
+exports.armor = function(req, res, next) {
     try {
         
-        NotNull(req.body.name);
-        NotNull(req.body.defBonus);
-        NotNull(req.body.maxDexBonus);
-        NotNull(req.body.reqFeat);
-        NotNull(req.body.imageURL);
-        NotNull(req.body.description);
-        NotNull(req.body.cold);
-        NotNull(req.body.fire);
-        NotNull(req.body.sonic);
-        NotNull(req.body.electrical);
-        NotNull(req.body.bludgeoning);
-        NotNull(req.body.slashing);
-        NotNull(req.body.strength);
-        NotNull(req.body.dexterity);
-        NotNull(req.body.constitution);
-        NotNull(req.body.intelligence);
-        NotNull(req.body.wisdom);
-        NotNull(req.body.charisma);
+        notNull(req.body.name);
+        notNull(req.body.defBonus);
+        notNull(req.body.maxDexBonus);
+        notNull(req.body.reqFeat);
+        notNull(req.body.imageURL);
+        notNull(req.body.description);
+        notNull(req.body.cold);
+        notNull(req.body.fire);
+        notNull(req.body.sonic);
+        notNull(req.body.electrical);
+        notNull(req.body.bludgeoning);
+        notNull(req.body.slashing);
+        notNull(req.body.strength);
+        notNull(req.body.dexterity);
+        notNull(req.body.constitution);
+        notNull(req.body.intelligence);
+        notNull(req.body.wisdom);
+        notNull(req.body.charisma);
         
-        NotWhiteSpace(req.body.name);
-        NotWhiteSpace(req.body.defBonus);
-        NotWhiteSpace(req.body.maxDexBonus);
-        NotWhiteSpace(req.body.reqFeat);
-        NotWhiteSpace(req.body.imageURL);
-        NotWhiteSpace(req.body.description);
-        NotWhiteSpace(req.body.cold);
-        NotWhiteSpace(req.body.fire);
-        NotWhiteSpace(req.body.sonic);
-        NotWhiteSpace(req.body.electrical);
-        NotWhiteSpace(req.body.bludgeoning);
-        NotWhiteSpace(req.body.slashing);
-        NotWhiteSpace(req.body.strength);
-        NotWhiteSpace(req.body.dexterity);
-        NotWhiteSpace(req.body.constitution);
-        NotWhiteSpace(req.body.intelligence);
-        NotWhiteSpace(req.body.wisdom);
-        NotWhiteSpace(req.body.charisma);
+        notWhiteSpace(req.body.name);
+        notWhiteSpace(req.body.defBonus);
+        notWhiteSpace(req.body.maxDexBonus);
+        notWhiteSpace(req.body.reqFeat);
+        notWhiteSpace(req.body.imageURL);
+        notWhiteSpace(req.body.description);
+        notWhiteSpace(req.body.cold);
+        notWhiteSpace(req.body.fire);
+        notWhiteSpace(req.body.sonic);
+        notWhiteSpace(req.body.electrical);
+        notWhiteSpace(req.body.bludgeoning);
+        notWhiteSpace(req.body.slashing);
+        notWhiteSpace(req.body.strength);
+        notWhiteSpace(req.body.dexterity);
+        notWhiteSpace(req.body.constitution);
+        notWhiteSpace(req.body.intelligence);
+        notWhiteSpace(req.body.wisdom);
+        notWhiteSpace(req.body.charisma);
         
-        IsANumber(req.body.defBonus);
-        IsANumber(req.body.maxDexBonus);
-        IsANumber(req.body.cold);
-        IsANumber(req.body.fire);
-        IsANumber(req.body.sonic);
-        IsANumber(req.body.electrical);
-        IsANumber(req.body.bludgeoning);
-        IsANumber(req.body.slashing);
-        IsANumber(req.body.strength);
-        IsANumber(req.body.dexterity);
-        IsANumber(req.body.constitution);
-        IsANumber(req.body.intelligence);
-        IsANumber(req.body.wisdom);
-        IsANumber(req.body.charisma);
+        isANumber(req.body.defBonus);
+        isANumber(req.body.maxDexBonus);
+        isANumber(req.body.cold);
+        isANumber(req.body.fire);
+        isANumber(req.body.sonic);
+        isANumber(req.body.electrical);
+        isANumber(req.body.bludgeoning);
+        isANumber(req.body.slashing);
+        isANumber(req.body.strength);
+        isANumber(req.body.dexterity);
+        isANumber(req.body.constitution);
+        isANumber(req.body.intelligence);
+        isANumber(req.body.wisdom);
+        isANumber(req.body.charisma);
         
         next();
     }
@@ -63,20 +63,20 @@ exports.Armor = function(req, res, next) {
     }
 }
 
-function NotNull(value) {
+function notNull(value) {
     if(!value) {
         throw new Error("Missing value");
     }
 }
 
-function NotWhiteSpace(value) {
+function notWhiteSpace(value) {
     var hasCharacters = /\S/.test(value);
     if(!hasCharacters) {
         throw new Error("Value is empty or contains only white-space");
     }
 }
 
-function IsANumber(value) {
+function isANumber(value) {
     if(isNaN(value)) {
         throw new Error("Invalid number");
     }

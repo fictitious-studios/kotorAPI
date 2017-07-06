@@ -1,14 +1,14 @@
 var businessLogic = require("../BusinessLogic/ArmorsBusinessLogic.js");
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
-var assertArmor = require("../BaseClasses/KotorAssert.js").Armor;
+var kotorAssertArmor = require("../BaseClasses/KotorAssert.js").armor;
 
 module.exports = function(app, admin) {
     // =====================================
     //          USER ROUTES
     // =====================================
     app.get("/armors", function(req, res) {
-        businessLogic.GetAllArmors()
+        businessLogic.getAllArmors()
         .then(armors => {
             res.json(armors);
         })
@@ -18,7 +18,7 @@ module.exports = function(app, admin) {
     });
     
     app.get("/armors/:id", function(req, res) {
-        businessLogic.GetArmorById(req.params.id)
+        businessLogic.getArmorById(req.params.id)
         .then(armor => {
             res.json(armor);
         })
@@ -31,7 +31,7 @@ module.exports = function(app, admin) {
     //          ADMIN ROUTES
     // =====================================
     admin.get("/armors", function(req, res) {
-        businessLogic.GetAllArmors()
+        businessLogic.getAllArmors()
         .then(armors => {
             res.json(armors);
         })
@@ -41,7 +41,7 @@ module.exports = function(app, admin) {
     });
     
     admin.get("/armors/:id", function(req, res) {
-        businessLogic.GetArmorById(req.params.id)
+        businessLogic.getArmorById(req.params.id)
         .then(armor => {
             res.json(armor);
         })
@@ -50,7 +50,7 @@ module.exports = function(app, admin) {
         });
     });
     
-    admin.post("/armors", urlencodedParser, assertArmor, function(req, res) {
+    admin.post("/armors", urlencodedParser, kotorAssertArmor, function(req, res) {
                 
         var immunity = [];
 
@@ -84,7 +84,7 @@ module.exports = function(app, admin) {
             "immunity": immunity
         };
         
-        businessLogic.InsertArmor(armor)
+        businessLogic.insertArmor(armor)
         .then(result => {
             res.json(result);
         })

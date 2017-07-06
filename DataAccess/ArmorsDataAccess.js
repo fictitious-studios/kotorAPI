@@ -1,8 +1,8 @@
 var mongo = require("mongodb");
 var dbFactory = require("../DataAccess/Utilities/DbFactory.js");
 
-exports.GetAllArmors = function() {
-    return dbFactory.GetUserConnection(mongo)
+exports.getAllArmors = function() {
+    return dbFactory.getUserConnection(mongo)
     .then(db => {
         var armors = db.collection("armors").find().toArray();
         db.close();
@@ -13,8 +13,8 @@ exports.GetAllArmors = function() {
     });
 }
 
-exports.GetArmorById = function(id) {
-    return dbFactory.GetUserConnection(mongo)
+exports.getArmorById = function(id) {
+    return dbFactory.getUserConnection(mongo)
     .then(db => {
         var objectId = new mongo.ObjectID(id);
         var armor = db.collection("armors").findOne({ "_id": objectId });
@@ -26,8 +26,8 @@ exports.GetArmorById = function(id) {
     });
 }
 
-exports.InsertArmor = function(armor) {
-    return dbFactory.GetAdminConnection(mongo)
+exports.insertArmor = function(armor) {
+    return dbFactory.getAdminConnection(mongo)
     .then(db => {
         return new Promise((resolve, reject) => {
             var query = {

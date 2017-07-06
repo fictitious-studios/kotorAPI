@@ -1,8 +1,8 @@
 var mongo = require("mongodb");
 var dbFactory = require("../DataAccess/Utilities/DbFactory.js");
 
-exports.GetAllFeats = function() {
-    return dbFactory.GetUserConnection(mongo)
+exports.getAllFeats = function() {
+    return dbFactory.getUserConnection(mongo)
     .then(db => {
         var feats = db.collection("feats").find().toArray();
         db.close();
