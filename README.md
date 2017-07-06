@@ -2,10 +2,10 @@
 An API for retrieving *"Star Wars: Knights of the Old Republic"* item and equipment data.
 
 ### Endpoints
-| **Url** | **Description** | **Method** | **Success Response** | **Error Response** |
-| :--- | :--- | :---: | :---: | --- |
-| /resources        | *Fetch all.* <br>**resources:** armors, belts, gauntlets, implants, masks    | GET | JSON Array
-| /resources/:id    | *Fetch by id.* <br>**resources:** armors, belts, gauntlets, implants, masks    | GET | JSON Object
+| **Url** | **Description** | **Method** | **Success Response** | Error Response |
+| :--- | :--- | :---: | :---: | :---: |
+| /resources        | *Fetch all.* <br>**resources:** armors, belts, gauntlets, implants, masks    | GET | JSON Array | 400 |
+| /resources/:id    | *Fetch by id.* <br>**resources:** armors, belts, gauntlets, implants, masks    | GET | JSON Object | 400 |
 
 ### Example
 ```
