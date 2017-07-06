@@ -58,6 +58,7 @@ exports.Armor = function(req, res, next) {
         next();
     }
     catch(error) {
+        res.status(400);
         res.send(error.message);
     }
 }
