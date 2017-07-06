@@ -1,7 +1,7 @@
 var businessLogic = require("../BusinessLogic/ArmorsBusinessLogic.js");
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
-var kotorAssertArmor = require("../BaseClasses/KotorAssert.js").armor;
+var validateArmor = require("./Utilities/Validate.js").armor;
 
 module.exports = function(app, admin) {
     // =====================================
@@ -50,7 +50,7 @@ module.exports = function(app, admin) {
         });
     });
     
-    admin.post("/armors", urlencodedParser, kotorAssertArmor, function(req, res) {
+    admin.post("/armors", urlencodedParser, validateArmor, function(req, res) {
                 
         var immunity = [];
 

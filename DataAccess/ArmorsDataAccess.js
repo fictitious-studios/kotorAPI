@@ -17,7 +17,7 @@ exports.getArmorById = function(id) {
     return dbFactory.getUserConnection(mongo)
     .then(db => {
         var objectId = new mongo.ObjectID(id);
-        var armor = db.collection("armors").findOne({ "_id": objectId });
+        var armor = db.collection("armors").findOne({ _id: objectId });
         db.close();
         return armor;
     })
@@ -30,14 +30,8 @@ exports.insertArmor = function(armor) {
     return dbFactory.getAdminConnection(mongo)
     .then(db => {
         return new Promise((resolve, reject) => {
-            var query = {
-                "name": armor.name
-            };
-            
-            var settings = {
-                returnOriginal: false,
-                upsert: true
-            };
+            var query = {name: armor.name};
+            var settings = {returnOriginal: false, upsert: true};
             
             db.collection("armors").findOneAndUpdate(query, armor, settings, function(error, result) {
                 if(!error) {
@@ -46,7 +40,7 @@ exports.insertArmor = function(armor) {
                 else {
                     reject(error);
                 }
-                
+            
                 db.close();
             });
         });

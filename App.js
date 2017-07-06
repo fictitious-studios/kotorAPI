@@ -7,6 +7,7 @@ app.use("/admin", admin);
 require("./Routes/ArmorsRoutes.js")(app, admin);
 require("./Routes/FeatsRoutes.js")(app);
 require("./Routes/BeltsRoutes.js")(app);
+require("./Routes/ImplantsRoutes.js")(app);
 
 // =======================================
 //          START KOTOR SERVER
