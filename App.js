@@ -8,6 +8,7 @@ require("./Routes/ArmorsRoutes.js")(app, admin);
 require("./Routes/FeatsRoutes.js")(app);
 require("./Routes/BeltsRoutes.js")(app);
 require("./Routes/ImplantsRoutes.js")(app);
+require("./Routes/GauntletsRoutes.js")(app);
 
 // =======================================
 //          START KOTOR SERVER
