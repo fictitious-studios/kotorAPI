@@ -1,5 +1,5 @@
-var dataAccess = require("../DataAccess/ImplantsDataAccess.js");
-var comparators = require("../BusinessLogic/Utilities/Comparators.js");
+var dataAccess = require('../DataAccess/ImplantsDataAccess.js');
+var comparators = require('../BusinessLogic/Utilities/Comparators.js');
 
 exports.getAllImplants = function() {
     return dataAccess.getAllImplants()

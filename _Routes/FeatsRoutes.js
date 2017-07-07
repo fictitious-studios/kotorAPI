@@ -1,7 +1,7 @@
-var businessLogic = require("../BusinessLogic/FeatsBusinessLogic.js");
+var businessLogic = require('../BusinessLogic/FeatsBusinessLogic.js');
 
 module.exports = function(app) {
-    app.get("/feats", function(req, res) {
+    app.get('feats', function(req, res) {
         businessLogic.getAllFeats()
         .then(feats => {
             res.json(feats);

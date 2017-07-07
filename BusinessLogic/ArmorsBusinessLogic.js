@@ -1,5 +1,5 @@
-var dataAccess = require("../DataAccess/ArmorsDataAccess.js");
-var comparators = require("../BusinessLogic/Utilities/Comparators.js");
+var dataAccess = require('../DataAccess/ArmorsDataAccess.js');
+var comparators = require('../BusinessLogic/Utilities/Comparators.js');
 
 exports.getAllArmors = function() {
     return dataAccess.getAllArmors()

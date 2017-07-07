@@ -1,10 +1,10 @@
-var mongo = require("mongodb");
-var dbFactory = require("../DataAccess/Utilities/DbFactory.js");
+var mongo = require('mongodb');
+var dbFactory = require('../DataAccess/Utilities/DbFactory.js');
 
 exports.getAllArmors = function() {
     return dbFactory.getUserConnection(mongo)
     .then(db => {
-        var armors = db.collection("armors").find().toArray();
+        var armors = db.collection('armors').find().toArray();
         db.close();
         return armors;
     })
@@ -17,7 +17,7 @@ exports.getArmorById = function(id) {
     return dbFactory.getUserConnection(mongo)
     .then(db => {
         var objectId = new mongo.ObjectID(id);
-        var armor = db.collection("armors").findOne({ _id: objectId });
+        var armor = db.collection('armors').findOne({ _id: objectId });
         db.close();
         return armor;
     })
@@ -33,7 +33,7 @@ exports.insertArmor = function(armor) {
             var query = {name: armor.name};
             var settings = {returnOriginal: false, upsert: true};
             
-            db.collection("armors").findOneAndUpdate(query, armor, settings, function(error, result) {
+            db.collection('armors').findOneAndUpdate(query, armor, settings, function(error, result) {
                 if(!error) {
                     resolve(result.value);
                 }

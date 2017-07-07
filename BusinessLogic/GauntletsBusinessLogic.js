@@ -1,5 +1,5 @@
-var dataAccess = require("../DataAccess/GauntletsDataAccess.js");
-var comparators = require("../BusinessLogic/Utilities/Comparators.js")
+var dataAccess = require('../DataAccess/GauntletsDataAccess.js');
+var comparators = require('../BusinessLogic/Utilities/Comparators.js')
 
 exports.getAllGauntlets = function() {
     return dataAccess.getAllGauntlets()

@@ -1,5 +1,5 @@
-var dataAccess = require("../DataAccess/MasksDataAccess.js");
-var comparators = require("../BusinessLogic/Utilities/Comparators.js");
+var dataAccess = require('../DataAccess/MasksDataAccess.js');
+var comparators = require('../BusinessLogic/Utilities/Comparators.js');
 
 exports.getAllMasks = function() {
     return dataAccess.getAllMasks()
