@@ -10,3 +10,13 @@ exports.getAllBelts = function() {
         throw error;
     });
 }
+
+exports.getBeltById = function(id) {
+    return dataAccess.getBeltById(id)
+    .then(belt => {
+        return belt;
+    })
+    .catch(error => {
+        
+    });
+}
