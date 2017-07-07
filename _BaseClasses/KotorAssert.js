@@ -19,5 +19,8 @@ exports.isANumber = function(value) {
 }
 
 exports.isValidId = function(value) {
-    
+    var type = typeof value;
+    if(value.length !== 24 || type !== 'string') {
+        throw new Error('Invalid id');
+    }
 }

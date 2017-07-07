@@ -1,5 +1,16 @@
 var kotorAssert = require('../../_BaseClasses/KotorAssert.js');
 
+exports.id = function(req, res, next) {
+    try {
+        kotorAssert.isValidId(req.params.id);
+        next();
+    }
+    catch(error) {
+        res.status(400);
+        res.send(error.message);
+    }
+}
+
 exports.armor = function(req, res, next) {
     try {
         

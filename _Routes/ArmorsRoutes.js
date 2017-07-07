@@ -2,6 +2,7 @@ var businessLogic = require('../BusinessLogic/ArmorsBusinessLogic.js');
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 var validateArmor = require('./Utilities/Validate.js').armor;
+var validateId = require('./Utilities/Validate.js').id;
 var path = require('path');
 
 module.exports = function(app, admin) {
@@ -18,7 +19,7 @@ module.exports = function(app, admin) {
         });
     });
     
-    app.get('/armors/:id', function(req, res) {
+    app.get('/armors/:id', validateId, function(req, res) {
         businessLogic.getArmorById(req.params.id)
         .then(armor => {
             res.json(armor);
@@ -45,7 +46,7 @@ module.exports = function(app, admin) {
         res.sendFile(path.join(__dirname + '/../Public/Views/NewArmor.html'));
     });
     
-    app.get('/admin/armors/:id', function(req, res) {
+    app.get('/admin/armors/:id', validateId, function(req, res) {
         businessLogic.getArmorById(req.params.id)
         .then(armor => {
             res.json(armor);
