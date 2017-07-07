@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>New Armor</title>
+        <title>NEW ARMOR</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="/Main.css">
     </head>
     <body>
-        <div class="container">
+        <div class="banner container-fluid">
             <h1>New Armor</h1>
-            <hr>
+        </div>
+        <div class="container">
             <h3>General Information</h3>
             <form class="form-horizontal" action="/admin/armors" method="POST">
                 <div class="form-group">
@@ -36,6 +37,17 @@
                           <option>Armor Proficiency: Light</option>
                           <option>Armor Proficiency: Medium</option>
                           <option>Armor Proficiency: Heavy</option>
+                          <option>Jedi Defense</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Affinity Restriction:</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="affinityRestriction" required>
+                          <option>None</option>
+                          <option>Light Side</option>
+                          <option>Dark Side</option>
                         </select>
                     </div>
                 </div>
@@ -89,20 +101,6 @@
                         <input class="form-control" type="text" name="slashing" required>    
                     </div>
                 </div>
-                <div class="form-group">
-                <label class="col-sm-2 control-label">Immunity:</label>
-                    <div class="col-sm-10">
-                        <label class="checkbox-inline">
-                            <input type="checkbox" name="immunity1" value="Critical Hits"> Critical Hits
-                        </label>
-                        <label class="checkbox-inline">
-                            <input type="checkbox" name="immunity2" value="Mind-Affecting"> Mind-Affecting
-                        </label>
-                        <label class="checkbox-inline">
-                            <input type="checkbox" name="immunity3" value="Poison"> Poison
-                        </label>
-                    </div>
-                </div>
                 <hr>
                 <h3>Attributes</h3>
                 <div class="form-group">
@@ -141,6 +139,100 @@
                         <input class="form-control" type="text" name="charisma" required>    
                     </div>
                 </div>
+                <hr>
+                <h3>Skills</h3>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Awareness:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="awareness" required>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Computer Use:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="computerUse" required>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Demolitions:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="demolitions" required>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Repair:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="repair" required>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Security:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="security" required>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Stealth:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="stealth" required>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Treat Injury:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="treatInjury" required>    
+                    </div>
+                </div>
+                <hr>
+                <h3>Saves</h3>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Fortitude:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="fortitude" required>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Reflex:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="reflex" required>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Will:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="will" required>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Immunity:</label>
+                    <div class="col-sm-10">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="immunity1" value="Critical Hits"> Critical Hits
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="immunity2" value="Mind-Affecting"> Mind-Affecting
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="immunity3" value="Poison"> Poison
+                        </label>
+                    </div>
+                </div>
+                <hr>
+                <h3>Miscellaneous</h3>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Life Regeneration:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="lifeRegeneration" required>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Force Regeneration:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="forceRegeneration" required>    
+                    </div>
+                </div>
+                
+                
                 <div class="col-sm-2"></div>
                 <div class="col-sm-10">
                     <button class="btn btn-primary btn-lg btn-block">Submit</button>    

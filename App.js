@@ -1,11 +1,9 @@
 var express = require('express');
 var app = express();
-var admin = express();
 
-app.use('/admin', admin);
 app.use(express.static('Public/Views/Styles'))
 
-require('./_Routes/ArmorsRoutes.js')(app, admin);
+require('./_Routes/ArmorsRoutes.js')(app);
 require('./_Routes/FeatsRoutes.js')(app);
 require('./_Routes/BeltsRoutes.js')(app);
 require('./_Routes/ImplantsRoutes.js')(app);

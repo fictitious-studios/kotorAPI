@@ -31,7 +31,7 @@ module.exports = function(app, admin) {
     // =====================================
     //          ADMIN ROUTES
     // =====================================
-    admin.get('/armors', function(req, res) {
+    app.get('/admin/armors', function(req, res) {
         businessLogic.getAllArmors()
         .then(armors => {
             res.json(armors);
@@ -41,11 +41,11 @@ module.exports = function(app, admin) {
         });
     });
     
-    admin.get('/armors/new', function(req, res) {
+    app.get('/admin/armors/new', function(req, res) {
         res.sendFile(path.join(__dirname + '/../Public/Views/NewArmor.html'));
     });
     
-    admin.get('/armors/:id', function(req, res) {
+    app.get('/admin/armors/:id', function(req, res) {
         businessLogic.getArmorById(req.params.id)
         .then(armor => {
             res.json(armor);
@@ -55,7 +55,7 @@ module.exports = function(app, admin) {
         });
     });
     
-    admin.post('/armors', urlencodedParser, validateArmor, function(req, res) {
+    app.post('/admin/armors', urlencodedParser, validateArmor, function(req, res) {
         
         var immunity = [];
 
@@ -68,6 +68,7 @@ module.exports = function(app, admin) {
             defBonus: req.body.defBonus,
             maxDexBonus: req.body.maxDexBonus,
             reqFeat: req.body.reqFeat,
+            affinityRestriction: req.body.affinityRestriction,
             imageURL: req.body.imageURL,
             description: req.body.description,
             damageResistance: {
@@ -85,6 +86,19 @@ module.exports = function(app, admin) {
                 intelligence: req.body.intelligence,
                 wisdom: req.body.wisdom,
                 charisma: req.body.charisma
+            },
+            skills: {
+                awareness: req.body.awareness,
+                computerUse: req.body.computerUse,
+                demolitions: req.body.demolitions,
+                repair: req.body.repair,
+                security: req.body.security,
+                stealth: req.body.stealth,
+                treatInjury: req.body.treatInjury
+            },
+            effects: {
+                lifeRegeneration: req.body.lifeRegeneration,
+                forceRegeneration: req.body.forceRegeneration
             },
             immunity: immunity
         };

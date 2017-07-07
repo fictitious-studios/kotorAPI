@@ -1,4 +1,13 @@
 
+.banner {
+    background-color: #575a5b;
+    padding: 1%;
+}
+
+h1 {
+    color: white;
+}
+
 button, .btn {
     margin: 10px;
 }
