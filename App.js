@@ -11,6 +11,16 @@ require('./_Routes/ImplantsRoutes.js')(app);
 require('./_Routes/GauntletsRoutes.js')(app);
 require('./_Routes/MasksRoutes.js')(app);
 
+app.get('/', function(req, res) {
+    res.status(200);
+    res.send('Welcome to the kotorAPI!');
+});
+
+app.get('*', function(req, res) {
+    res.status(400);
+    res.send('Endpoint not recognized.');
+});
+
 // =======================================
 //          START KOTOR SERVER
 // =======================================
