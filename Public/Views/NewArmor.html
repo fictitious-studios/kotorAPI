@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>New Armor</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/Main.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>New Armor</h1>
+            <hr>
+            <h3>General Information</h3>
+            <form class="form-horizontal" action="/admin/armors" method="POST">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Name:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="name" required>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Defense Bonus:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="defBonus" required>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Max Dexterity Bonus:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="maxDexBonus" required>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Required Feat:</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="reqFeat" required>
+                          <option>Armor Proficiency: Light</option>
+                          <option>Armor Proficiency: Medium</option>
+                          <option>Armor Proficiency: Heavy</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Image Url:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="imageURL" required>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Description:</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" rows="3" name="description" required></textarea>
+                    </div>
+                </div>
+                <hr>
+                <h3>Damage Resistances</h3>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Cold:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="cold" required>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Fire:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="fire" required>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Sonic:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="sonic" required>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Electrical:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="electrical" required>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Bludgeoning:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="bludgeoning" required>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Slashing:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="slashing" required>    
+                    </div>
+                </div>
+                <div class="form-group">
+                <label class="col-sm-2 control-label">Immunity:</label>
+                    <div class="col-sm-10">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="immunity1" value="Critical Hits"> Critical Hits
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="immunity2" value="Mind-Affecting"> Mind-Affecting
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="immunity3" value="Poison"> Poison
+                        </label>
+                    </div>
+                </div>
+                <hr>
+                <h3>Attributes</h3>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Strength:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="strength" required>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Dexterity:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="dexterity" required>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Constitution:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="constitution" required>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Intelligence:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="intelligence" required>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Wisdom:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="wisdom" required>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Charisma:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="charisma" required>    
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+                <div class="col-sm-10">
+                    <button class="btn btn-primary btn-lg btn-block">Submit</button>    
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

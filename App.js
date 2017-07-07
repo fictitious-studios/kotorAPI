@@ -3,6 +3,7 @@ var app = express();
 var admin = express();
 
 app.use('/admin', admin);
+app.use(express.static('Public/Views/Styles'))
 
 require('./_Routes/ArmorsRoutes.js')(app, admin);
 require('./_Routes/FeatsRoutes.js')(app);
