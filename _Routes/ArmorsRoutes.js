@@ -91,7 +91,7 @@ module.exports = function(app, admin) {
         
         businessLogic.insertArmor(armor)
         .then(result => {
-            res.json(result);
+            res.redirect('/admin/armors/new');
         })
         .catch(error => {
             res.json(error.message);
