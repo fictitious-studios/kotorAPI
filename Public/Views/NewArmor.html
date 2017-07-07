@@ -7,7 +7,7 @@
     </head>
     <body>
         <div class="banner container-fluid">
-            <h1>New Armor</h1>    
+            <h1>NEW ARMOR</h1>    
         </div>
         <div class="container">
             <h3>General Information</h3>
@@ -244,9 +244,8 @@
             
             for(var i = 0; i < controls.length; i++) {
                 controls[i].addEventListener('keypress', function(event) {
-                    
                     var key = event.which;
-                    if(key < 48 || key > 57) {
+                    if((key < 48 || key > 57) && key !== 8 && key !== 0) {
                         event.preventDefault();
                     }
                 });
