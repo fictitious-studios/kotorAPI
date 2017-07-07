@@ -17,3 +17,7 @@ exports.isANumber = function(value) {
         throw new Error('Invalid number');
     }
 }
+
+exports.isValidId = function(value) {
+    
+}

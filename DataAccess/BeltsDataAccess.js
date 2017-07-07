@@ -11,4 +11,17 @@ exports.getAllBelts = function() {
     .catch(error => {
         throw error;
     });
-};
+}
+
+exports.getBeltById = function(id) {
+    return dbFactory.getUserConnection(mongo)
+    .then(db => {
+        var objectId = new mongo.ObjectID(id);
+        var armor = db.collection('belts').findOne({ _id: objectId });
+        db.close();
+        return armor;
+    })
+    .catch(error => {
+        throw error;
+    });
+}
