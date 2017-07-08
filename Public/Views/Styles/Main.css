@@ -12,3 +12,7 @@ h1 {
 button, .btn {
     margin: 10px;
 }
+
+textarea {
+    resize: none;
+}

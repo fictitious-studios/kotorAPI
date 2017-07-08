@@ -5,7 +5,7 @@ var validateArmor = require('./Utilities/Validate.js').armor;
 var validateId = require('./Utilities/Validate.js').id;
 var path = require('path');
 
-module.exports = function(app, admin) {
+module.exports = function(app) {
     // =====================================
     //          USER ROUTES
     // =====================================

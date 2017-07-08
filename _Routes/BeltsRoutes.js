@@ -1,6 +1,9 @@
 var businessLogic = require('../BusinessLogic/BeltsBusinessLogic.js');
 
 module.exports = function(app) {
+    // =====================================
+    //          USER ROUTES
+    // =====================================
     app.get('/belts', function(req, res) {
         businessLogic.getAllBelts()
         .then(belts => {
